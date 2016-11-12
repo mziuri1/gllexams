@@ -1,0 +1,24 @@
+CREATE TABLE subject (
+    
+    id INT PRIMARY KEY NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    minlimit INT NOT NULL
+    
+);
+
+CREATE TABLE student (
+    
+    id INT PRIMARY KEY NOT NULL,
+    name VARCHAR(50) NOT NULL,
+    surname VARCHAR(50) NOT NULL,
+    idcode BIGINT NOT NULL UNIQUE
+    
+);
+
+CREATE TABLE studentresults (
+    
+    score INT NOT NULL,
+    studentresults_subject INT REFERENCES subject(id),
+    studentresults_id INT REFERENCES student(id)
+    
+);
