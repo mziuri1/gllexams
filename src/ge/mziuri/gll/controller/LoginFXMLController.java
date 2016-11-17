@@ -21,7 +21,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import ge.mziuri.gll.model.User;
-import ge.mziuri.gll.runner.RunnerLasha;
+import ge.mziuri.gll.view.Runner;
 
 public class LoginFXMLController implements Initializable {
 
@@ -65,8 +65,6 @@ public class LoginFXMLController implements Initializable {
 
         } catch (IOException ex) {
 
-            Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
-
         }
 
     }
@@ -103,8 +101,6 @@ public class LoginFXMLController implements Initializable {
                 namef.setText("");
                 passwordf.setText("");
 
-                User.currentUsername = u.getName();
-
                 Login();
 
             }
@@ -140,31 +136,9 @@ public class LoginFXMLController implements Initializable {
             stage.setResizable(false);
             stage.show();
 
-            stage.setOnHiding(e -> {
-
-                try {
-
-                    InterfaceFXMLController.SendMessage("User " + User.currentUsername + " is Exiting !" + System.lineSeparator());
-
-                } catch (Exception ex) {
-
-                }
-
-                try {
-
-                    InterfaceFXMLController.CloseSocket();
-
-                } catch (Exception ex) {
-
-                }
-
-            });
-
-            InterfaceFXMLController.setInterfaceFXMLStage(stage);
-
         } catch (IOException ex) {
 
-            Logger.getLogger(LoginFXMLController.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println(ex.getMessage());
 
         }
 

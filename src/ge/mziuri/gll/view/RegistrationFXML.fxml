@@ -63,29 +63,29 @@
                 <Font name="Sylfaen" size="30.0" />
             </font>
         </Button>
-        <Label text="Label" translateX="50.0" translateY="38.0" GridPane.rowIndex="1">
+        <Label fx:id="namel" translateX="50.0" translateY="38.0" GridPane.rowIndex="1">
             <font>
-                <Font size="16.0" />
+                <Font name="Sylfaen" size="16.0" />
             </font>
         </Label>
-        <Label text="Label" translateX="50.0" translateY="38.0" GridPane.rowIndex="2">
+        <Label fx:id="surnamel" translateX="50.0" translateY="38.0" GridPane.rowIndex="2">
             <font>
-                <Font size="16.0" />
+                <Font name="Sylfaen" size="16.0" />
             </font>
         </Label>
-        <Label text="Label" translateX="50.0" translateY="38.0" GridPane.rowIndex="3">
+        <Label fx:id="identificationl" translateX="50.0" translateY="38.0" GridPane.rowIndex="3">
             <font>
-                <Font size="16.0" />
+                <Font name="Sylfaen" size="16.0" />
             </font>
         </Label>
-        <Label text="Label" translateX="50.0" translateY="38.0" GridPane.rowIndex="4">
+        <Label fx:id="passwordl" translateX="50.0" translateY="38.0" GridPane.rowIndex="4">
             <font>
-                <Font size="16.0" />
+                <Font name="Sylfaen" size="16.0" />
             </font>
         </Label>
-        <Label text="Label" translateX="50.0" translateY="38.0" GridPane.rowIndex="5">
+        <Label fx:id="confirmpasswordl" translateX="50.0" translateY="38.0" GridPane.rowIndex="5">
             <font>
-                <Font size="16.0" />
+                <Font name="Sylfaen" size="16.0" />
             </font>
         </Label>
     </children>
