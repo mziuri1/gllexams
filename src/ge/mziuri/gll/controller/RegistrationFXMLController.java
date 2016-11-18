@@ -22,6 +22,8 @@ public class RegistrationFXMLController implements Initializable {
     @FXML
     private Label namel, surnamel, identificationl, passwordl, confirmpasswordl;
 
+    private boolean modn = false, mods = false, modi = false, modp = false, modc = false;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -29,6 +31,8 @@ public class RegistrationFXMLController implements Initializable {
 
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                modn = true;
 
                 if (newValue.length() < 2) {
 
@@ -47,6 +51,8 @@ public class RegistrationFXMLController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
+                mods = true;
+
                 if (newValue.length() < 2) {
 
                     surnamel.setText("მინიმუმ 2 სიმბოლო !");
@@ -61,10 +67,45 @@ public class RegistrationFXMLController implements Initializable {
 
         });
 
+        identification.textProperty().addListener(new ChangeListener<String>() {
+
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                modi = true;
+
+                try {
+
+                    if (newValue.charAt(newValue.length() - 1) < '0' || newValue.charAt(newValue.length() - 1) > '9') {
+
+                        identification.setText(oldValue);
+
+                    }
+
+                } catch (Exception ex) {
+
+                }
+
+                if (newValue.length() != 11) {
+
+                    identificationl.setText("ზუსტად 11 სიმბოლო !");
+
+                } else {
+
+                    identificationl.setText("");
+
+                }
+
+            }
+
+        });
+
         password.textProperty().addListener(new ChangeListener<String>() {
 
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+
+                modp = true;
 
                 if (newValue.length() < 4) {
 
@@ -89,6 +130,8 @@ public class RegistrationFXMLController implements Initializable {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
 
+                modc = true;
+
                 if (!newValue.equals(password.getText())) {
 
                     confirmpasswordl.setText("პაროლები უნდა ემთხვეოდეს !");
@@ -107,11 +150,20 @@ public class RegistrationFXMLController implements Initializable {
 
     public void RegistrationSetOnAction() {
 
-        User u = new User();
+        if (namel.getText() == "" && surnamel.getText() == "" && identificationl.getText() == "" && passwordl.getText() == "" && confirmpasswordl.getText() == "") {
 
-        u.setName(name.getText());
-        u.setSurname(surname.getText());
-        u.setPassword(password.getText());
+            if (modn && mods && modi && modp && modc) {
+
+                User u = new User();
+
+                u.setName(name.getText());
+                u.setSurname(surname.getText());
+                u.setIdentification(Long.parseLong(identification.getText()));
+                u.setPassword(password.getText());
+
+            }
+
+        }
 
     }
 }
