@@ -1,5 +1,7 @@
 package ge.mziuri.gll.controller;
 
+import ge.mziuri.gll.dao.StudentDAOImpl;
+import ge.mziuri.gll.metainfo.MetaInfo;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
@@ -160,6 +162,10 @@ public class RegistrationFXMLController implements Initializable {
                 u.setSurname(surname.getText());
                 u.setIdentification(Long.parseLong(identification.getText()));
                 u.setPassword(password.getText());
+                
+                StudentDAOImpl sdaoi=new StudentDAOImpl();
+                
+                sdaoi.AddStudent(u);
 
             }
 

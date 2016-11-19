@@ -6,7 +6,6 @@ public class User {
     private String surname;
     private Long identification;
     private String password;
-    private String confirmpassword;
 
     public User() {
     }
@@ -16,7 +15,6 @@ public class User {
         this.surname = surname;
         this.identification = identification;
         this.password = password;
-        this.confirmpassword = confirmpassword;
     }
 
     public String getName() {
@@ -49,14 +47,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getConfirmpassword() {
-        return confirmpassword;
-    }
-
-    public void setConfirmpassword(String confirmpassword) {
-        this.confirmpassword = confirmpassword;
     }
 
 }
