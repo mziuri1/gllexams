@@ -8,10 +8,11 @@ CREATE TABLE subject (
 
 CREATE TABLE student (
     
-    id INT PRIMARY KEY NOT NULL,
+    id SERIAL PRIMARY KEY NOT NULL,
     name VARCHAR(50) NOT NULL,
     surname VARCHAR(50) NOT NULL,
-    idcode BIGINT NOT NULL UNIQUE
+    identification BIGINT NOT NULL UNIQUE,
+    password VARCHAR(16) NOT NULL
     
 );
 
