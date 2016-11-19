@@ -27,7 +27,7 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Label fx:id="name" text="სახელი" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+        <Label fx:id="identification" text="ID" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
             <font>
                 <Font name="Sylfaen" size="35.0" />
             </font>
@@ -37,7 +37,7 @@
                 <Font name="Sylfaen" size="35.0" />
             </font>
         </Label>
-        <TextField fx:id="namef" maxWidth="250.0" minWidth="250.0" onAction="#TextFSetOnAction" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+        <TextField fx:id="identificationf" maxWidth="250.0" minWidth="250.0" onAction="#IndentificationFSetOnAction" prefWidth="250.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
             <font>
                 <Font name="Sylfaen" size="20.0" />
             </font>

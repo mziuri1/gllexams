@@ -8,4 +8,6 @@ public interface StudentDAO {
 
     public void RemoveStudent(User u);
 
+    public User GetStudent(Long indentification);
+
 }

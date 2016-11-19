@@ -1,5 +1,6 @@
 package ge.mziuri.gll.controller;
 
+import ge.mziuri.gll.dao.StudentDAOImpl;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -28,11 +29,11 @@ public class LoginFXMLController implements Initializable {
     @FXML
     private GridPane grid;
     @FXML
-    private Label name;
+    private Label identification;
     @FXML
     private Label password;
     @FXML
-    private TextField namef;
+    private TextField identificationf;
     @FXML
     private PasswordField passwordf;
     @FXML
@@ -71,48 +72,18 @@ public class LoginFXMLController implements Initializable {
 
     public void LoginSetOnAction() {
 
-        String tusername = namef.getText();
+        Long tidentification = Long.parseLong(identificationf.getText());
         String tpassword = passwordf.getText();
 
-        User u = new User();
+        StudentDAOImpl sdaoi = new StudentDAOImpl();
 
-        try (ObjectInputStream in = new ObjectInputStream(new FileInputStream(new File("src\\users\\" + tusername)))) {
+        User u = sdaoi.GetStudent(tidentification);
 
-            u = (User) in.readObject();
+        if (tpassword.equals(u.getPassword())) {
 
-            if (!u.getPassword().equals(tpassword)) {
+            Login();
 
-                Alert alert = new Alert(Alert.AlertType.ERROR);
-
-                alert.setTitle("Error");
-                alert.setHeaderText("Incorrect Password !");
-                alert.setContentText("Try Again !");
-                alert.showAndWait();
-
-            } else {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-
-                alert.setTitle("Login");
-                alert.setHeaderText("Login Successfull !");
-                alert.setContentText("Username : " + tusername);
-                alert.showAndWait();
-
-                namef.setText("");
-                passwordf.setText("");
-
-                Login();
-
-            }
-
-        } catch (IOException | ClassNotFoundException ex) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-
-            alert.setHeaderText("Incorrect Username !");
-            alert.setContentText("Try Again !");
-            alert.setTitle("Error");
-            alert.showAndWait();
+        } else {
 
         }
 
@@ -144,7 +115,7 @@ public class LoginFXMLController implements Initializable {
 
     }
 
-    public void TextFSetOnAction() {
+    public void IndentificationFSetOnAction() {
 
         LoginSetOnAction();
 
