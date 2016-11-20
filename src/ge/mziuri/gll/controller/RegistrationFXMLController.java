@@ -160,11 +160,11 @@ public class RegistrationFXMLController implements Initializable {
 
                 u.setName(name.getText());
                 u.setSurname(surname.getText());
-                u.setIdentification(Long.parseLong(identification.getText()));
+                u.setIdentification(identification.getText());
                 u.setPassword(password.getText());
-                
-                StudentDAOImpl sdaoi=new StudentDAOImpl();
-                
+
+                StudentDAOImpl sdaoi = new StudentDAOImpl();
+
                 sdaoi.AddStudent(u);
 
             }

@@ -4,13 +4,13 @@ public class User {
 
     private String name;
     private String surname;
-    private Long identification;
+    private String identification;
     private String password;
 
     public User() {
     }
 
-    public User(String name, String surname, Long identification, String password, String confirmpassword) {
+    public User(String name, String surname, String identification, String password, String confirmpassword) {
         this.name = name;
         this.surname = surname;
         this.identification = identification;
@@ -33,11 +33,11 @@ public class User {
         this.surname = surname;
     }
 
-    public Long getIdentification() {
+    public String getIdentification() {
         return identification;
     }
 
-    public void setIdentification(Long identification) {
+    public void setIdentification(String identification) {
         this.identification = identification;
     }
 

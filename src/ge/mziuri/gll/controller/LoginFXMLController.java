@@ -72,7 +72,7 @@ public class LoginFXMLController implements Initializable {
 
     public void LoginSetOnAction() {
 
-        Long tidentification = Long.parseLong(identificationf.getText());
+        String tidentification = identificationf.getText();
         String tpassword = passwordf.getText();
 
         StudentDAOImpl sdaoi = new StudentDAOImpl();
