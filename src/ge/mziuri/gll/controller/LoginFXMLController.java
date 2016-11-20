@@ -102,7 +102,7 @@ public class LoginFXMLController implements Initializable {
             Scene scene = new Scene(root);
 
             Stage stage = new Stage();
-            stage.setTitle("Chat");
+            stage.setTitle("Test");
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
