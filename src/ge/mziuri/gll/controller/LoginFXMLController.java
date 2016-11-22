@@ -126,5 +126,21 @@ public class LoginFXMLController implements Initializable {
         LoginSetOnAction();
 
     }
+ public void OpacityChanger() throws InterruptedException {
+        registration.opacityProperty().setValue(1);
 
+    }
+
+    public void OpacityChanger2() {
+        registration.opacityProperty().setValue(0.7);
+
+    }
+
+    public void Forgotmax() {
+        forgot.opacityProperty().setValue(1);
+    }
+
+    public void Forgotmin() {
+        forgot.opacityProperty().setValue(0.7);
+    }
 }
