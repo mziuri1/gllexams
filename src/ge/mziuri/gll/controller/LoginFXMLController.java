@@ -127,4 +127,40 @@ public class LoginFXMLController implements Initializable {
 
     }
 
+    public void RegistrationOnMouseMoved() throws InterruptedException {
+
+        registration.opacityProperty().setValue(0.5);
+
+    }
+
+    public void RegistrationOnMouseExited() {
+
+        registration.opacityProperty().setValue(1);
+
+    }
+
+    public void ForgotPasswordSetOnMouseMoved() {
+
+        forgot.opacityProperty().setValue(0.5);
+
+    }
+
+    public void ForgotPasswordSetOnMouseExited() {
+
+        forgot.opacityProperty().setValue(1);
+
+    }
+
+    public void ამჩემფეხებს() {
+
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+
+        alert.setHeaderText("Am Chem Fexebs !");
+
+        alert.setContentText("True Story !");
+
+        alert.showAndWait();
+
+    }
+
 }
