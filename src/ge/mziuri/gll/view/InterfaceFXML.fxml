@@ -1,11 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ge.mziuri.gll.controller.InterfaceFXMLController">
-    
-</AnchorPane>
+
+<StackPane maxHeight="600.0" maxWidth="800.0" minHeight="600.0" minWidth="800.0" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label text="ტესტი" translateY="50.0" StackPane.alignment="TOP_CENTER">
+         <font>
+            <Font name="Sylfaen" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="number" text="1" translateX="10.0" translateY="10.0" StackPane.alignment="TOP_LEFT">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="rb1" mnemonicParsing="false" text="RadioButton" translateX="150.0" StackPane.alignment="CENTER_LEFT" />
+      <RadioButton fx:id="rb2" mnemonicParsing="false" text="RadioButton" translateX="150.0" translateY="50.0" StackPane.alignment="CENTER_LEFT" />
+      <RadioButton fx:id="rb3" mnemonicParsing="false" text="RadioButton" translateX="150.0" translateY="100.0" StackPane.alignment="CENTER_LEFT" />
+      <RadioButton fx:id="rb4" mnemonicParsing="false" text="RadioButton" translateX="150.0" translateY="150.0" StackPane.alignment="CENTER_LEFT" />
+      <Button fx:id="next" mnemonicParsing="false" text="შემდეგი" translateY="220.0">
+         <font>
+            <Font name="Sylfaen" size="36.0" />
+         </font>
+      </Button>
+      <Label fx:id="test" translateY="100.0" StackPane.alignment="TOP_CENTER">
+         <font>
+            <Font name="Sylfaen" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</StackPane>
